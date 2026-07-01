@@ -2,105 +2,377 @@
 <html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<title>My Night Portfolio</title>
 
-        body {
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to bottom, #000814, #001d3d, #003566);
-        }
+<style>
 
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
-            border-radius: 50%;
-            animation: fall linear infinite;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        @keyframes fall {
-            from {
-                transform: translateY(-100vh);
-                opacity: 1;
-            }
 
-            to {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
+body{
+    height:100vh;
+    overflow:hidden;
+    background:
+    radial-gradient(circle,#14213d,#000814);
+    color:white;
+}
 
-        .container {
-            position: relative;
-            z-index: 10;
-            width: 600px;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            background: rgba(0, 0, 0, 0.45);
-            border: 2px solid #4fc3f7;
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 0 25px #2196f3;
-        }
 
-        h1 {
-            color: #8ecae6;
-            margin-bottom: 20px;
-        }
+/* ดาว */
 
-        p {
-            font-size: 20px;
-            margin: 10px 0;
-        }
-    </style>
+.star{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background:white;
+    border-radius:50%;
+    animation:float 6s linear infinite;
+    cursor:pointer;
+}
+
+
+@keyframes float{
+
+0%{
+transform:translateY(-20vh);
+opacity:1;
+}
+
+100%{
+transform:translateY(120vh);
+opacity:0;
+}
+
+}
+
+
+
+.container{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+width:700px;
+
+padding:30px;
+
+background:rgba(0,0,0,.55);
+
+border:2px solid #6ecbff;
+
+border-radius:25px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 30px #0077ff;
+
+text-align:center;
+
+z-index:10;
+
+}
+
+
+
+h1{
+
+color:#8ed8ff;
+
+text-shadow:0 0 15px #00aaff;
+
+}
+
+
+
+.profile{
+
+display:flex;
+gap:20px;
+justify-content:center;
+align-items:center;
+
+margin:20px;
+
+}
+
+
+
+.profile img{
+
+width:180px;
+height:220px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:3px solid #8ed8ff;
+
+box-shadow:0 0 20px #009dff;
+
+}
+
+
+
+.info{
+
+text-align:left;
+
+font-size:18px;
+
+}
+
+
+
+button{
+
+margin-top:15px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:20px;
+
+background:#00aaff;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 0 15px #00aaff;
+
+}
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+.hidden{
+
+display:none;
+
+margin-top:20px;
+
+}
+
+
+
+.tiktok{
+
+display:inline-block;
+
+margin-top:20px;
+
+color:#ff7ce5;
+
+text-decoration:none;
+
+font-size:20px;
+
+}
+
+
+
+/* hamster */
+
+.hamster{
+
+position:absolute;
+
+bottom:20px;
+right:30px;
+
+font-size:70px;
+
+animation:ham 2s infinite;
+
+}
+
+
+
+@keyframes ham{
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+
+
+.moon{
+
+position:absolute;
+
+top:30px;
+right:50px;
+
+font-size:80px;
+
+}
+
+
+
+</style>
 
 </head>
 
+
+
 <body>
 
-    <div class="container">
-        <h1>สวัสดีครับ ยินดีต้อนรับเข้าสู่พอร์ตของนักเรียน</h1>
 
-        <p><strong>ชื่อ-นามสกุล :</strong> วรรัญยา ครองสุข</p>
+<div class="moon">🌙</div>
 
-        <p><strong>ตำแหน่ง :</strong> นักเรียน</p>
-    </div>
 
-    <script>
-        for (let i = 0; i < 200; i++) {
+<div class="container">
 
-            const star = document.createElement("div");
-            star.classList.add("star");
 
-            star.style.left = Math.random() * 100 + "vw";
-            star.style.animationDuration = (Math.random() * 5 + 3) + "s";
-            star.style.animationDelay = Math.random() * 5 + "s";
+<h1>🌌 Night Portfolio 🌌</h1>
 
-            const size = Math.random() * 3 + 1;
-            star.style.width = size + "px";
-            star.style.height = size + "px";
 
-            star.style.opacity = Math.random();
+<div class="profile">
 
-            document.body.appendChild(star);
-        }
-    </script>
+
+<img src="myphoto.png">
+
+
+<div class="info">
+
+<p>✨ ชื่อ : วรรัญยา ครองสุข</p>
+
+<p>✨ อายุ : 17 ปี</p>
+
+<p>✨ ตำแหน่ง : นักเรียน</p>
+
+<p>✨ OC : Haru 🐹</p>
+
+<p>✨ ชอบ : วาดรูป เกม เพลง ขนม</p>
+
+</div>
+
+
+</div>
+
+
+
+<button onclick="showInfo()">
+⭐ ดูข้อมูลเพิ่มเติม
+</button>
+
+
+<div class="hidden" id="more">
+
+<p>
+คนที่ชอบอยู่ในโลกกลางคืน
+ฟังเพลง วาดรูป และดูแฮมสเตอร์เดินเล่น 🐹
+</p>
+
+
+<img src="oc.png"
+width="180"
+style="border-radius:20px;margin:15px;">
+
+
+</div>
+
+
+
+<br>
+
+
+<a class="tiktok"
+href="https://www.tiktok.com/@lunar.blue3?is_from_webapp=1&sender_device=pc"
+target="_blank">
+
+🎵 TikTok ของฉัน
+
+</a>
+
+
+
+</div>
+
+
+
+<div class="hamster">
+🐹
+</div>
+
+
+
+
+<script>
+
+
+function showInfo(){
+
+let box=document.getElementById("more");
+
+box.style.display=
+box.style.display=="block"
+?"none"
+:"block";
+
+}
+
+
+
+// สร้างดาว
+
+for(let i=0;i<150;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.animationDuration=
+(Math.random()*5+3)+"s";
+
+
+star.style.animationDelay=
+Math.random()*5+"s";
+
+
+star.onclick=function(){
+
+this.style.background="#00ffff";
+
+this.style.boxShadow=
+"0 0 20px cyan";
+
+}
+
+
+document.body.appendChild(star);
+
+}
+
+
+
+</script>
+
+
 
 </body>
-
 </html>
