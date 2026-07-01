@@ -1,11 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
+
 <head>
-  <title> My Protfolio </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #000814, #001d3d, #003566);
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 600px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.45);
+            border: 2px solid #4fc3f7;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 25px #2196f3;
+        }
+
+        h1 {
+            color: #8ecae6;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+    </style>
+
 </head>
+
 <body>
-  <h1>สวัสดีครับ ยินดีต้อนรับเข้าสู่พอร์ของนักเรีย</h1>
-  <p> ชื่อ-นานสกุล : วรรัญยา ครองสุข </p>
-  <p>ตำแหน่ง : นักเรีย </p>
+
+    <div class="container">
+        <h1>สวัสดีครับ ยินดีต้อนรับเข้าสู่พอร์ตของนักเรียน</h1>
+
+        <p><strong>ชื่อ-นามสกุล :</strong> วรรัญยา ครองสุข</p>
+
+        <p><strong>ตำแหน่ง :</strong> นักเรียน</p>
+    </div>
+
+    <script>
+        for (let i = 0; i < 200; i++) {
+
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.animationDuration = (Math.random() * 5 + 3) + "s";
+            star.style.animationDelay = Math.random() * 5 + "s";
+
+            const size = Math.random() * 3 + 1;
+            star.style.width = size + "px";
+            star.style.height = size + "px";
+
+            star.style.opacity = Math.random();
+
+            document.body.appendChild(star);
+        }
+    </script>
+
 </body>
+
 </html>
